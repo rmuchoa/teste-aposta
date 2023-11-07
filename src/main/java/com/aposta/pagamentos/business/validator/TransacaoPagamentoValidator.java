@@ -19,13 +19,13 @@ public class TransacaoPagamentoValidator {
     }
 
     private void validarPagadorPessoaFisica(TransacaoPagamento transacao) {
-        if (transacao.ehPessoaJuridica()) {
+        if (transacao.temPagadorPessoaJuridica()) {
             throw new TransacaoNaoPermitidaException("Pagador não é pessoa física");
         }
     }
 
     private void validarPagadorMaiorDeIdade(TransacaoPagamento transacao) {
-        if (transacao.ehPagadorMenorDeIdade()) {
+        if (transacao.temPagadorMenorDeIdade()) {
             throw new TransacaoNaoPermitidaException("Pagador é menor de Idade");
         }
     }

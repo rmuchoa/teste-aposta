@@ -55,21 +55,21 @@ public class PagamentoBuilder {
     }
 
     public PagamentoBuilder comPagadorPessoaJuridica() {
-        return comPagador(PagadorBuilder.builder()
-                .comTipoPessoaJuridica()
+        return comPagador(PagadorPessoaJuridicaBuilder.builder()
+                .comAlgumCnpj()
                 .build());
     }
 
     public PagamentoBuilder comPagadorMenorDeIdade() {
-        return comPagador(PagadorBuilder.builder()
-                .comTipoPessoaFisica()
+        return comPagador(PagadorPessoaFisicaBuilder.builder()
+                .comAlgumCpf()
                 .comDesesseteAnos()
                 .build());
     }
 
     public PagamentoBuilder comPagadorDeDesoitoAnosDeIdade() {
-        return comPagador(PagadorBuilder.builder()
-                .comTipoPessoaFisica()
+        return comPagador(PagadorPessoaFisicaBuilder.builder()
+                .comAlgumCpf()
                 .comDesoitoAnos()
                 .build());
     }

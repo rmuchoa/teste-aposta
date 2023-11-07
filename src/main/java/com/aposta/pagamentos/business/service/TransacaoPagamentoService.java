@@ -17,6 +17,7 @@ public class TransacaoPagamentoService {
         try {
             validator.validar(transacao);
 
+
             return transacao;
 
         } catch (TransacaoNaoPermitidaException ex) {

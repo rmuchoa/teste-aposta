@@ -6,7 +6,6 @@ public class TransacaoPagamento {
 
     private Pagador pagador;
     private String qrCode;
-
     private BigDecimal valor;
 
     public TransacaoPagamento(Pagador pagador, String qrCode, BigDecimal valor) {
@@ -39,19 +38,21 @@ public class TransacaoPagamento {
         this.valor = valor;
     }
 
-    public boolean ehPagadorMenorDeIdade() {
-        return this.pagador.ehMenorDeIdade();
+    public boolean temPagadorMenorDeIdade() {
+        return pagador instanceof PagadorPessoaFisica &&
+                ((PagadorPessoaFisica) pagador).ehMenorDeIdade();
     }
 
-    public boolean ehPessoaJuridica() {
-        return this.pagador.ehPessoaJuridica();
+    public boolean temPagadorPessoaJuridica() {
+        return pagador.ehPessoaJuridica();
     }
 
     public boolean naoTemQRCode() {
-        return this.qrCode == null;
+        return qrCode == null;
     }
 
-    public boolean ehValorAcimaDe(BigDecimal valorComparavel) {
-        return this.valor.compareTo(valorComparavel) > 0;
+    public boolean ehValorAcimaDe(BigDecimal comparavel) {
+        return valor.compareTo(comparavel) > 0;
     }
+
 }
