@@ -1,4 +1,4 @@
-package com.aposta.model;
+package com.aposta.pagamentos.business.type;
 
 public enum TipoPessoa {
 

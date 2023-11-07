@@ -1,9 +1,15 @@
-package com.aposta.exception;
+package com.aposta.pagamentos.business.exception;
 
 public class TransacaoNaoPermitidaException extends RuntimeException {
 
+    private String motivo;
+
     public TransacaoNaoPermitidaException(String motivo) {
         super(String.format("Esta transação não é permitida: %s!", motivo));
+        this.motivo = motivo;
     }
 
+    public String getMotivo() {
+        return motivo;
+    }
 }

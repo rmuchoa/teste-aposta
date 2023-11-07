@@ -1,4 +1,6 @@
-package com.aposta.model;
+package com.aposta.pagamentos.business.entity;
+
+import com.aposta.pagamentos.business.type.TipoPessoa;
 
 public class Pagador {
 
@@ -30,7 +32,7 @@ public class Pagador {
         return idade < 18;
     }
 
-    public boolean ehPessoaFisica() {
-        return TipoPessoa.PESSOA_FISICA.equals(tipo);
+    public boolean ehPessoaJuridica() {
+        return TipoPessoa.PESSOA_JURIDICA.equals(tipo);
     }
 }

@@ -1,4 +1,4 @@
-package com.aposta.model;
+package com.aposta.pagamentos.business.entity;
 
 import java.math.BigDecimal;
 
@@ -43,8 +43,12 @@ public class TransacaoPagamento {
         return this.pagador.ehMenorDeIdade();
     }
 
-    public boolean naoEhPessoaFisica() {
-        return !this.pagador.ehPessoaFisica();
+    public boolean ehPessoaJuridica() {
+        return this.pagador.ehPessoaJuridica();
+    }
+
+    public boolean naoTemQRCode() {
+        return this.qrCode == null;
     }
 
     public boolean ehValorAcimaDe(BigDecimal valorComparavel) {
