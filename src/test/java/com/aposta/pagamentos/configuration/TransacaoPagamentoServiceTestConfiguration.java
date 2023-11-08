@@ -1,8 +1,7 @@
 package com.aposta.pagamentos.configuration;
 
-import com.aposta.pagamentos.repository.RelatorioPagadorCache;
-import com.aposta.pagamentos.repository.RelatorioPagadorRepository;
-import com.aposta.pagamentos.repository.RelatorioPagadorRepositoryTest;
+import com.aposta.pagamentos.cache.RelatorioPagadorCache;
+import com.aposta.pagamentos.business.relatorio.repository.RelatorioPagadorRepository;
 import org.mockito.Mockito;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
