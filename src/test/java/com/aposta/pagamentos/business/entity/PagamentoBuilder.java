@@ -33,7 +33,7 @@ public class PagamentoBuilder {
                 .build();
     }
 
-    public static TransacaoPagamento buildPagamentoComValorQuinhentosMais() {
+    public static TransacaoPagamento buildPagamentoComValorAcimaDeQuinhentos() {
         return builder()
                 .comPagadorDeDesoitoAnosDeIdade()
                 .comAlgumQrCode()
@@ -44,6 +44,22 @@ public class PagamentoBuilder {
     public static TransacaoPagamento buildPagamentoValido() {
         return builder()
                 .comPagadorDeDesoitoAnosDeIdade()
+                .comAlgumQrCode()
+                .comQuinhentosDeValor()
+                .build();
+    }
+
+    public static TransacaoPagamento buildPagamentoComValor(BigDecimal valor) {
+        return builder()
+                .comPagadorDeDesoitoAnosDeIdade()
+                .comAlgumQrCode()
+                .comValor(valor)
+                .build();
+    }
+
+    public static TransacaoPagamento buildPagamentoComPagadorComCpf(String cpf) {
+        return builder()
+                .comPagadorComCpf(cpf)
                 .comAlgumQrCode()
                 .comQuinhentosDeValor()
                 .build();
@@ -70,6 +86,13 @@ public class PagamentoBuilder {
     public PagamentoBuilder comPagadorDeDesoitoAnosDeIdade() {
         return comPagador(PagadorPessoaFisicaBuilder.builder()
                 .comAlgumCpf()
+                .comDesoitoAnos()
+                .build());
+    }
+
+    public PagamentoBuilder comPagadorComCpf(String cpf) {
+        return comPagador(PagadorPessoaFisicaBuilder.builder()
+                .comCpf(cpf)
                 .comDesoitoAnos()
                 .build());
     }

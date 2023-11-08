@@ -1,7 +1,5 @@
 package com.aposta.pagamentos.business.entity;
 
-import com.aposta.pagamentos.business.type.TipoPessoa;
-
 public class PagadorPessoaFisicaBuilder {
 
     private String cpf;

@@ -9,6 +9,7 @@ public class PagadorPessoaFisica extends Pagador {
 
     public PagadorPessoaFisica(String cpf, Integer idade) {
         super(TipoPessoa.PESSOA_FISICA);
+        this.cpf = cpf;
         this.idade = idade;
     }
 

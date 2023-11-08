@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 public class RelatorioPagador {
 
+    protected static final BigDecimal LIMITE_GERAL_POR_CONTA = BigDecimal.valueOf(3000.00);
     private Pagador pagador;
     private BigDecimal totalPago;
 
@@ -20,4 +21,12 @@ public class RelatorioPagador {
         return totalPago;
     }
 
+    public void acrescentarValor(BigDecimal valor) {
+        totalPago = totalPago.add(valor);
+    }
+
+    public boolean extrapolouLimiteGeralPorConta(BigDecimal valor) {
+        return totalPago.add(valor)
+                .compareTo(LIMITE_GERAL_POR_CONTA) > 0;
+    }
 }
